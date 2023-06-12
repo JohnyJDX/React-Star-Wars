@@ -3,7 +3,7 @@ import { useCallback, useState } from 'react';
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage';
 import SearchInfo from '../../components/SearchInfo/SearchInfo';
 import UIInput from '../../components/UI/UIInput/UIInput';
-import  UILoad  from "../../components/UI/UILoad/UILoad";
+import UILoad from '../../components/UI/UILoad/UILoad';
 import { API_SEARCH } from '../../constants/api';
 import { getPeopleId } from '../../services/getPeopleData';
 import { getApi } from '../../utils/network';
@@ -12,8 +12,10 @@ import s from './Search.module.css';
 const Search = () => {
 	const [inputValue, setInputValue] = useState('');
 	const [isErrorApi, setIsErrorApi] = useState(false);
-	const [people, setPeople] = useState([]);
+	const [people, setPeople] = useState(null);
 	const [isLoading, setIsLoading] = useState(false);
+
+	console.log(people);
 
 	const debounceGetRes = useCallback(
 		debounce(async value => {
@@ -43,7 +45,7 @@ const Search = () => {
 
 	const handleClearInput = () => {
 		setInputValue('');
-		setPeople([]);
+		setPeople(null);
 	};
 
 	return (
@@ -69,8 +71,11 @@ const Search = () => {
 					</div>
 				)}
 			</div>
-			{isLoading && <UILoad/>}
-			{people.length > 0 && <SearchInfo people={people} />}
+			{isLoading && <UILoad />}
+			{people?.length > 0 && <SearchInfo people={people} />}
+			{people?.length === 0 && (
+				<p className={s.text}>This character was not found</p>
+			)}
 			{isErrorApi && <ErrorMessage />}
 		</>
 	);
