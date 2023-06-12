@@ -7,7 +7,7 @@ const PersonPhoto = ({ personName, id }) => {
 
 	return (
 		<div className={s.img}>
-			<img src={`./img/characters/${id}.jpg`} alt={personName} />
+			<img src={`/React-Star-Wars/img/characters/${id}.jpg`} alt={personName} />
 		</div>
 	);
 };
