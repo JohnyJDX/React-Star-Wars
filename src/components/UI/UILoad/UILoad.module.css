@@ -1,0 +1,35 @@
+.loader {
+	width: 70px;
+	height: 70px;
+	margin: 0 auto;
+	margin-top: 60px;
+
+	border: 5px solid;
+	border-top-color: transparent !important;
+	border-bottom-color: transparent !important;
+	border-radius: 50%;
+
+	animation: rotate 2s linear infinite;
+}
+
+.spinner {
+	width: 56px;
+	height: 56px;
+	margin: 0 auto;
+	margin-top: 150px;
+
+	background: radial-gradient(farthest-side, #50a5ab 94%, #0000) top/9px 9px
+			no-repeat,
+		conic-gradient(#0000 30%, #50a5ab);
+	border-radius: 50%;
+
+	-webkit-mask: radial-gradient(farthest-side, #0000 calc(100% - 9px), #000 0);
+
+	animation: spinnerD 1s infinite linear;
+}
+
+@keyframes spinnerD {
+	to {
+		transform: rotate(1turn);
+	}
+}

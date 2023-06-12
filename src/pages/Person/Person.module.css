@@ -1,0 +1,40 @@
+.wrapper {
+	margin-top: 45px;
+}
+
+.name {
+	display: inline-block;
+
+	padding: 10px;
+
+	font-size: 18px;
+	font-weight: bold;
+	color: var(--color-white);
+
+	background: var(--color-violet);
+	border-radius: 3px 3px 3px 0;
+}
+
+.info {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 30px;
+
+	padding: 15px;
+
+	border-left: 5px solid var(--color-violet);
+}
+
+@media (max-width: 1020px) {
+	.info {
+		justify-content: center;
+	}
+}
+
+@media (max-width: 590px) {
+	.info {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+}
