@@ -14,14 +14,14 @@ const People = () => {
 	const [prevPage, setPrevPage] = useState();
 	const [nextPage, setNextPage] = useState();
 	const [counterPage, setCounterPage] = useState(1);
-	const [isLoading, setIsLoading] = useState(true);
+	const [isLoadingPage, setIsLoadingPage] = useState(true); // Step 2: Initialize isLoadingPage state
 
 	const queryParams = useQueryParams();
 	const queryPage = queryParams.get('page');
 
 	const getResource = async url => {
 		try {
-			setIsLoading(true);
+			setIsLoadingPage(true);
 
 			const { results, next, previous } = await getApi(url);
 			if (results) {
@@ -39,7 +39,7 @@ const People = () => {
 				setPrevPage(previous);
 				setNextPage(next);
 				setCounterPage(getPeoplePageId(url));
-				setIsLoading(false);
+				setIsLoadingPage(false);
 			} else {
 				setIsErrorApi(true);
 			}
@@ -56,7 +56,7 @@ const People = () => {
 		<>
 			{isErrorApi ? (
 				<ErrorMessage />
-			) : people.length === 0 && isLoading ? (
+			) : people.length === 0 || isLoadingPage ? ( // Step 4: Display preloader when isLoadingPage is true
 				<UiLoad />
 			) : (
 				<>

@@ -14,10 +14,10 @@ const PeopleNavigation = ({ prevPage, nextPage, counterPage, getResource }) => {
 
 	return (
 		<div className={s.btns}>
-			<Link to={`/people?page=${counterPage - 1}`}>
+			<Link to={`/React-Star-Wars/people?page=${counterPage - 1}`}>
 				<UIButton onClick={handlePrevPage} disabled={!prevPage} text={'Prev'} />
 			</Link>
-			<Link to={`/people?page=${counterPage + 1}`}>
+			<Link to={`/React-Star-Wars/people?page=${counterPage + 1}`}>
 				<UIButton onClick={handleNextPage} disabled={!nextPage} text={'Next'} />
 			</Link>
 		</div>
