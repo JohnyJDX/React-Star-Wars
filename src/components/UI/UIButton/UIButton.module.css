@@ -1,0 +1,39 @@
+.btn {
+	min-width: 70px;
+	padding: 11px 16px;
+
+	font-size: 14px;
+	font-weight: 700;
+
+	background: none;
+	border-radius: 4px;
+
+	transition: all 0.3s ease-out;
+}
+
+.white {
+	color: #fff;
+	border: 2px solid white;
+}
+
+.white:hover {
+	color: #000;
+	background: #fff;
+}
+
+.dark {
+	color: #000;
+	border: 2px solid #000;
+}
+
+.dark:hover {
+	color: #fff;
+	background: #000;
+}
+
+.btn:disabled {
+	cursor: auto;
+	color: grey;
+	background: none;
+	border-color: gray;
+}

@@ -1,0 +1,22 @@
+.input {
+	position: relative;
+	display: inline-flex;
+	margin-bottom: 25px;
+}
+.search {
+	margin-bottom: 25px;
+}
+
+.clear {
+	cursor: pointer;
+
+	position: absolute;
+	top: 9px;
+	right: 12px;
+
+	display: flex;
+}
+
+.text {
+	font-size: 20px;
+}

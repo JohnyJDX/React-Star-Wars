@@ -1,0 +1,6 @@
+.btns {
+	display: flex;
+	gap: 15px;
+	justify-content: end;
+	margin-bottom: 20px;
+}

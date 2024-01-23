@@ -1,0 +1,20 @@
+.wrapper {
+	display: flex;
+	gap: 50px;
+	justify-content: space-between;
+}
+
+.title {
+	font-size: 35px;
+	font-weight: bold;
+}
+
+@media screen and (max-width: 568px) {
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 50px;
+		align-items: center;
+		justify-content: space-between;
+	}
+}
